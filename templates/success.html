@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Account Deleted Successfully{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Account Deleted Successfully</h1>
+
+    <div class="alert alert-success">
+        Your account and all associated data have been permanently deleted.
+    </div>
+
+    <div class="info-section">
+        <h3>What was deleted:</h3>
+        <ul>
+            <li>Your account profile and login credentials</li>
+            <li>All personal information and preferences</li>
+            <li>App usage data and history</li>
+            <li>Any content you created within the app</li>
+        </ul>
+    </div>
+
+    <p>Thank you for using [Your App Name]. If you have any questions or concerns, please don't hesitate to contact our support team.</p>
+
+    <div class="contact-info">
+        <h3>Contact Information:</h3>
+        <p><strong>Email:</strong> <a href="mailto:support@yourapp.com">support@yourapp.com</a></p>
+    </div>
+</div>
+{% endblock %}

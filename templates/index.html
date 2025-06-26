@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Account Deletion - [Your App Name]{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Account Deletion Request</h1>
+    <h2>[Your App Name]</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ 'error' if category == 'error' else 'success' }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class="info-section">
+        <h3>What happens when you delete your account:</h3>
+        <ul>
+            <li>All your personal information will be permanently deleted</li>
+            <li>Your app usage data and preferences will be removed</li>
+            <li>Any content you've created will be deleted</li>
+            <li>This action cannot be undone</li>
+        </ul>
+    </div>
+
+    <form method="POST" action="{{ url_for('delete_account') }}" onsubmit="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">
+        <div class="form-group">
+            <label for="email">Email Address Associated with Your Account:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+        </div>
+
+        <button type="submit" class="btn">Delete My Account</button>
+    </form>
+
+    <div class="contact-info">
+        <h3>Need Help?</h3>
+        <p>If you have questions about account deletion or need assistance, contact us at:</p>
+        <p><strong>Email:</strong> <a href="mailto:support@yourapp.com">support@yourapp.com</a></p>
+        <p><strong>Developer:</strong> [Your Name/Company]</p>
+    </div>
+</div>
+{% endblock %}
