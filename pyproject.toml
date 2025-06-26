@@ -1,0 +1,10 @@
+[project]
+name = "yeshivos-account-deletion"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.12"
+dependencies = [
+    "flask>=3.1.1",
+    "python-dotenv>=1.1.1",
+    "supabase>=2.16.0",
+]
